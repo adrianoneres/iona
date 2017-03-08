@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"> 
+
+	<h:head>
+		<title>#{msg.projectName}</title>
+		<h:outputStylesheet library="css" name="main.css" />
+	</h:head>
+	<h:body>
+		
+		<div class="body-content">
+			<ui:include src="/templates/_mainHeader.xhtml" />
+			
+			<div class="title">
+			    <div class="container">
+		       		<ui:insert name="title" />
+			    </div>
+			</div>
+			
+			<p:spacer height="20px" />
+			
+			<div class="content">
+				<p:growl id="growl" showDetail="true" life="6000"  globalOnly="true"/>
+				<ui:insert name="content" />
+			</div>
+		</div>
+		
+		<p:confirmDialog global="true" showEffect="fade" hideEffect="fade" header="#{msg.delete}" message="#{msg.confirmDelete}">
+	        <p:commandButton value="#{msg.yes}" type="button" styleClass="ui-confirmdialog-yes" icon="ui-icon-check" />
+	        <p:commandButton value="#{msg.no}" type="button" styleClass="ui-confirmdialog-no" icon="ui-icon-close" />
+	    </p:confirmDialog>
+		
+	</h:body>
+</html>

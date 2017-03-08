@@ -1,0 +1,65 @@
+/* reset primefaces */
+.ui-widget, .ui-widget .ui-widget {
+	font-size: 90% !important;
+}
+
+/* general styles */
+
+body {
+  	margin: 1rem auto;
+  	max-width: 80em;
+  	font-family: "Helvetica", "Arial", sans-serif;
+  	line-height: 1.5;
+  	padding: 4em 1em;
+  	color: #555;
+}
+
+h1,
+h2,
+strong {
+  color: #333;
+}
+
+.body-content {
+	background-color: #fafafa;
+	padding: 1rem;
+	border-radius: 3px;
+}
+
+/* form */
+.field {
+	margin-bottom: 1.5rem;	
+}
+
+.ui-outputlabel {
+	margin-right: .6rem;
+}
+
+.ui-message-error {
+	display: inline-block;
+}
+
+/* tables */
+.ui-datatable .ui-datatable-header {
+	text-align: right !important;	
+}
+
+.ui-outputlabel .ui-outputlabel-rfi {
+    margin-left: 0.4em;
+    color: red;
+}
+
+th.actions,
+td.actions {
+	width: 180px;
+	text-align: center;
+}
+
+button + button {
+	margin-left: 1rem !important;
+}
+
+/* confirmation dialog */
+.ui-dialog-footer {
+	text-align: center !important;
+}
