@@ -9,9 +9,61 @@
 	
 	<h:inputHidden value="#{patientMB.patient.id}" />
 
-	<p>
+	<div class="field">
 		<p:outputLabel value="#{msg.name}" for="name" />
 		<p:inputText id="name" value="#{patientMB.patient.name}" />
-	</p>
+	</div>
+	
+	<div class="field">
+		<p:outputLabel value="#{msg.email}" for="email" />
+		<p:inputText id="email" value="#{patientMB.patient.email}" />
+	</div>
+	
+	<p:fieldset legend="#{msg.phones}" id="phoneList">
+		
+		<div class="field-4">
+			<p:outputLabel value="#{msg.label}" for="label" />
+			<p:inputText id="label" value="#{patientMB.newPhone.label}" />
+		</div>
+		
+		<div class="field-4">
+			<p:outputLabel value="#{msg.number}" for="number" />
+			<p:inputText id="number" value="#{patientMB.newPhone.number}" />
+		</div>
+		
+		<div class="field-4">
+			<p:commandButton actionListener="#{patientMB.addPhone()}" value="#{msg.add} #{msg.phone}" update="phoneList" icon="fa fa-plus" />
+		</div>
+		
+		<p:spacer height="10" />
+	
+		<p:dataTable id="phones" 
+			value="#{patientMB.patient.phones}" 
+			var="phone" 
+			paginator="true"
+			rows="10"
+			rowsPerPageTemplate="10,20,30"
+			paginatorPosition="bottom"
+			paginatorTemplate="{FirstPageLink}
+	                               {PreviousPageLink} {PageLinks}
+	                               {NextPageLink} {LastPageLink}
+	                               {RowsPerPageDropdown}">
+			<p:column headerText="#{msg.label}">
+				<h:outputText value="#{phone.label}" />
+			</p:column>
+			<p:column headerText="#{msg.number}">
+				<h:outputText value="#{phone.number}" />
+			</p:column>
+			<p:column headerText="#{msg.actions}" styleClass="actions">
+				<p:commandButton icon="fa fa-edit" action="#{patientMB.clean()}">
+				</p:commandButton>
+				<p:commandButton icon="fa fa-remove" actionListener="#{patientMB.clean()}" update="phones">
+					<p:confirm/>
+				</p:commandButton>
+			</p:column>
+		</p:dataTable>
+		
+	</p:fieldset>
+	
 	
 </ui:composition>

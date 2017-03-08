@@ -5,9 +5,8 @@
 	xmlns:p="http://primefaces.org/ui" 
 	template="/templates/main.xhtml">
 	
-	<ui:param name="title" value="#{msg.patients}" />
-	
 	<ui:define name="content">
+		<h1 class="page-title">#{msg.patients}</h1>
 		<h:form>
 			<p>
 				<p:commandButton value="#{msg.add} #{msg.patient}" action="#{patientMB.showCreate()}"/>

@@ -1,6 +1,8 @@
 package com.iona.app.bo;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -26,34 +28,44 @@ public class PatientBO extends GenericBO implements Serializable {
 		return patientDAO.listAll();
 	}
 	
-	public void create(Patient patient) {
+	public boolean create(Patient patient) {
 		try {
 			patientDAO.create(patient);
 			addMessage(Message.CREATE_SUCCESS);
+			return true;
 		} catch (Exception e) {
 			log.error(e.getMessage());
 			addMessage(Message.CREATE_ERROR);
+			return false;
 		}
 	}
 	
-	public void update(Patient patient) {
+	public boolean update(Patient patient) {
 		try {
 			patientDAO.update(patient);
 			addMessage(Message.UPDATE_SUCCESS);
+			return true;
 		} catch (Exception e) {
 			log.error(e.getMessage());
 			addMessage(Message.UPDATE_ERROR);
+			return false;
 		}
 	}
 	
-	public void delete(Patient patient) {
+	public boolean delete(Patient patient) {
 		try {
 			patientDAO.delete(patient);
 			addMessage(Message.DELETE_SUCCESS);
+			return true;
 		} catch (Exception e) {
 			log.error(e.getMessage());
 			addMessage(Message.DELETE_ERROR);
+			return false;
 		}
+	}
+	
+	public Patient findById(Long id) {
+		return patientDAO.findByID(id);
 	}
 
 }

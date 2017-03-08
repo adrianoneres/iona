@@ -27,6 +27,13 @@ strong {
 }
 
 /* form */
+
+label {
+	font-weight: 700;
+	display: block;
+	margin-bottom: .5rem;
+}
+
 .field {
 	margin-bottom: 1.5rem;	
 }

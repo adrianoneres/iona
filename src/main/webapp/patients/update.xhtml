@@ -5,9 +5,8 @@
 	xmlns:p="http://primefaces.org/ui" 
 	template="/templates/main.xhtml">
 	
-	<ui:param name="titulo" value="#{msg.update} #{msg.patient}" />
-	
 	<ui:define name="content">
+		<h1 class="page-title">#{msg.update} #{msg.patient}</h1>
 		<h:form>
 			<ui:include src="_form.xhtml" />
 			<p>

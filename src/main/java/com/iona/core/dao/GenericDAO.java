@@ -52,10 +52,10 @@ public class GenericDAO<T> implements Serializable {
 	public T findByField(String field, String value) {
 		Query query = em.createQuery("FROM " + clazz.getName() + " WHERE " + field + " = :value");
 		query.setParameter("value", value);
-		List<T> lista = query.getResultList();
-		if (lista != null && lista.size() > 0) {
+		List<T> list = query.getResultList();
+		if (list != null && list.size() > 0) {
 			//TODO show a warn in console if returns more than one register
-			return lista.get(0);
+			return list.get(0);
 		}
 		return null;
 	}
