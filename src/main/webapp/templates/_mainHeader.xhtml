@@ -5,10 +5,13 @@
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:p="http://primefaces.org/ui">
 	<h:form>
+		
 		<p:menubar id="tb_geral">
 			<p:menuitem value="#{msg.home}" outcome="home" />
+			<p:submenu label="#{msg.registration}">
+				<p:menuitem value="#{msg.patients}" outcome="patients" />
+			</p:submenu>
 		</p:menubar>
 
-		<p:sticky target="tb_geral" />
 	</h:form>
 </ui:composition>

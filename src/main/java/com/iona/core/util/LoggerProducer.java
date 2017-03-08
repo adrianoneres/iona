@@ -16,7 +16,7 @@ public class LoggerProducer {
     }
 	
 	private void setLoggerLevel(Logger logger) {
-		logger.setLevel(Level.toLevel("INFO")); //TODO Adriano 02/27/2017 - Recover from a environment or wildfly defined variable
+		logger.setLevel(Level.toLevel("INFO")); //TODO Adriano 03/01/2017 - Recover from a environment or wildfly defined variable
 		if (logger.getLevel() == null) {
 			logger.setLevel(Level.toLevel("INFO"));
 		}

@@ -20,15 +20,15 @@ public class GenericDAO<T> implements Serializable {
 		this.clazz = clazz;
 	}
 	
-	public void adicionar(Object obj) throws Exception {
+	public void create(Object obj) throws Exception {
 		em.persist(obj);
 	}
 	
-	public void excluir(Object obj) throws Exception {
+	public void delete(Object obj) throws Exception {
 		em.remove(em.contains(obj) ? obj : em.merge(obj));
 	}
 	
-	public void editar(Object obj) throws Exception{
+	public void update(Object obj) throws Exception{
 		em.merge(obj);
 	}
 	
@@ -44,16 +44,17 @@ public class GenericDAO<T> implements Serializable {
 		return query.getResultList();
 	}
 	
-	public T buscarPorId(Long id) {
+	public T findByID(Long id) {
 		return em.find(clazz, id);
 	}
 	
 	@SuppressWarnings("unchecked")
-	public T listByField(String field, String value) {
+	public T findByField(String field, String value) {
 		Query query = em.createQuery("FROM " + clazz.getName() + " WHERE " + field + " = :value");
 		query.setParameter("value", value);
 		List<T> lista = query.getResultList();
 		if (lista != null && lista.size() > 0) {
+			//TODO show a warn in console if returns more than one register
 			return lista.get(0);
 		}
 		return null;

@@ -4,31 +4,31 @@
   <PROCESS-ITEM ID="rules:*:0" NAME="item" PATH="*" model-entity="JSFProcessItem">
    <PROCESS-ITEM-OUTPUT ID="home::#index.xhtml" NAME="output"
     PATH="/index.xhtml" TARGET="rules:#index.xhtml" TITLE="home" model-entity="JSFProcessItemOutput"/>
-  </PROCESS-ITEM>
- </PROCESS-ITEM>
- <PROCESS-ITEM NAME="rules:#pages#refJuri#*" PATH="/pages/refJuri/*"
-  SHAPE="32,289,0,0" model-entity="JSFProcessGroup">
-  <PROCESS-ITEM ID="rules:#pages#refJuri#*:0" NAME="item"
-   PATH="/pages/refJuri/*" model-entity="JSFProcessItem">
-   <PROCESS-ITEM-OUTPUT ID="listar::#pages#refJuri#refJuriListar.xhtml"
-    NAME="output" PATH="/pages/refJuri/refJuriListar.xhtml"
-    TARGET="rules:#pages#refJuri#refJuriListar.xhtml" TITLE="listar" model-entity="JSFProcessItemOutput"/>
-   <PROCESS-ITEM-OUTPUT
-    ID="adicionar::#pages#refJuri#refJuriAdicionar.xhtml" NAME="output1"
-    PATH="/pages/refJuri/refJuriAdicionar.xhtml"
-    TARGET="rules:#pages#refJuri#refJuriAdicionar.xhtml"
-    TITLE="adicionar" model-entity="JSFProcessItemOutput"/>
-   <PROCESS-ITEM-OUTPUT ID="editar::#pages#refJuri#refJuriEditar.xhtml"
-    NAME="output2" PATH="/pages/refJuri/refJuriEditar.xhtml"
-    TARGET="rules:#pages#refJuri#refJuriEditar.xhtml" TITLE="editar" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="patients::#patients#list.xhtml"
+    NAME="output1" PATH="/patients/list.xhtml"
+    TARGET="rules:#patients#list.xhtml" TITLE="patients" model-entity="JSFProcessItemOutput"/>
   </PROCESS-ITEM>
  </PROCESS-ITEM>
  <PROCESS-ITEM NAME="rules:#index.xhtml" PATH="/index.xhtml"
   SHAPE="304,33,0,0" model-entity="JSFProcessGroup"/>
- <PROCESS-ITEM NAME="rules:#pages#refJuri#refJuriAdicionar.xhtml"
-  PATH="/pages/refJuri/refJuriAdicionar.xhtml" SHAPE="304,481,0,0" model-entity="JSFProcessGroup"/>
- <PROCESS-ITEM NAME="rules:#pages#refJuri#refJuriListar.xhtml"
-  PATH="/pages/refJuri/refJuriListar.xhtml" SHAPE="304,305,0,0" model-entity="JSFProcessGroup"/>
- <PROCESS-ITEM NAME="rules:#pages#refJuri#refJuriEditar.xhtml"
-  PATH="/pages/refJuri/refJuriEditar.xhtml" SHAPE="304,593,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#patients#*" PATH="/patients/*"
+  SHAPE="32,129,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#patients#*:0" NAME="item" PATH="/patients/*" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="list::#patients#list.xhtml" NAME="output"
+    PATH="/patients/list.xhtml" TARGET="rules:#patients#list.xhtml"
+    TITLE="list" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="create::#patients#create.xhtml"
+    NAME="output1" PATH="/patients/create.xhtml"
+    TARGET="rules:#patients#create.xhtml" TITLE="create" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="update::#patients#update.xhtml"
+    NAME="output2" PATH="/patients/update.xhtml"
+    TARGET="rules:#patients#update.xhtml" TITLE="update" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#patients#list.xhtml"
+  PATH="/patients/list.xhtml" SHAPE="272,145,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#patients#create.xhtml"
+  PATH="/patients/create.xhtml" SHAPE="272,321,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#patients#update.xhtml"
+  PATH="/patients/update.xhtml" SHAPE="272,433,0,0" model-entity="JSFProcessGroup"/>
 </PROCESS>

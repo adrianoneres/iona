@@ -16,8 +16,8 @@ public abstract class GenericMB<T> implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	protected static final String LIST = "list";
-	protected static final String ADD = "create";
-	protected static final String EDIT = "update";
+	protected static final String CREATE = "create";
+	protected static final String UPDATE = "update";
 	
 	@Inject
 	protected transient Logger log;
@@ -25,8 +25,6 @@ public abstract class GenericMB<T> implements Serializable {
 	private ResourceBundle rb = ResourceBundle.getBundle("messages");
 	
 	public abstract void clean();
-	
-	public abstract void list();
 	
 	public abstract String showCreate();
 	
