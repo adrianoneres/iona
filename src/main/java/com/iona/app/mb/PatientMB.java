@@ -5,8 +5,9 @@ import java.util.List;
 
 import javax.annotation.PostConstruct;
 import javax.enterprise.inject.Model;
-import javax.faces.bean.ViewScoped;
+import javax.faces.context.FacesContext;
 import javax.faces.event.ActionEvent;
+import javax.faces.view.ViewScoped;
 import javax.inject.Inject;
 import javax.transaction.Transactional;
 
@@ -32,7 +33,12 @@ public class PatientMB extends GenericMB<Patient> {
 	
 	@PostConstruct
 	public void clean() {
-		this.patient = new Patient();
+		Long patientId = (Long) FacesContext.getCurrentInstance().getExternalContext().getFlash().get("patientId");
+		if (patientId != null) {
+			this.patient = patientBO.findById(patientId);
+		} else {
+			this.patient = new Patient();
+		}
 		this.newPhone = new Phone();
 		patients = null;
 	}
@@ -50,7 +56,7 @@ public class PatientMB extends GenericMB<Patient> {
 	}
 
 	public String showUpdate(Patient patient) {
-		this.patient = patientBO.findById(patient.getId());
+		FacesContext.getCurrentInstance().getExternalContext().getFlash().put("patientId", patient.getId());
 		return UPDATE;
 	}
 	
@@ -72,8 +78,13 @@ public class PatientMB extends GenericMB<Patient> {
 		if (this.patient.getPhones() == null) {
 			this.patient.setPhones(new ArrayList<>());
 		}
+		newPhone.setPatient(patient);
 		this.patient.getPhones().add(newPhone);
 		this.newPhone = new Phone();
+	}
+	
+	public void removePhone(Phone phone) {
+		this.patient.getPhones().remove(phone);
 	}
 	
 	public Patient getPatient() {

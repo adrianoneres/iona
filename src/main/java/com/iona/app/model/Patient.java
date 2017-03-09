@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.Cacheable;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -35,7 +36,10 @@ public class Patient implements Serializable {
 	@Column(name = "email")
 	private String email;
 	
-	@OneToMany(mappedBy = "patient", fetch = FetchType.LAZY)
+	@OneToMany(mappedBy = "patient", 
+			fetch = FetchType.LAZY, 
+			cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REMOVE},
+			orphanRemoval = true)
 	private List<Phone> phones;
 	
 	public Long getId() {

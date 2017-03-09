@@ -10,7 +10,7 @@ body {
   	max-width: 80em;
   	font-family: "Helvetica", "Arial", sans-serif;
   	line-height: 1.5;
-  	padding: 4em 1em;
+  	padding: 0 1em 4em 1em;
   	color: #555;
 }
 
@@ -24,6 +24,31 @@ strong {
 	background-color: #fafafa;
 	padding: 1rem;
 	border-radius: 3px;
+}
+
+.logo {
+	margin: 1rem 0;
+}
+
+/* grid */
+
+.row {
+	width: 100%;
+}
+
+.field-3 {
+	width: 25%;
+	float: left;
+}
+
+.field-button {
+	margin-top: 2em;
+}
+
+.row::after {
+	content: "";
+	display: table;
+	clear: both;
 }
 
 /* form */

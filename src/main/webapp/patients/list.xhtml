@@ -6,7 +6,7 @@
 	template="/templates/main.xhtml">
 	
 	<ui:define name="content">
-		<h1 class="page-title">#{msg.patients}</h1>
+		<h2 class="page-title">#{msg.patients}</h2>
 		<h:form>
 			<p>
 				<p:commandButton value="#{msg.add} #{msg.patient}" action="#{patientMB.showCreate()}"/>

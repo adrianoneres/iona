@@ -36,7 +36,7 @@ public class Phone implements Serializable {
 	private String number;
 	
 	@NotNull
-	@ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REMOVE})
+	@ManyToOne
 	@JoinColumn(name = "id_patient", foreignKey = @ForeignKey(name = "fk_patient"))
 	private Patient patient;
 

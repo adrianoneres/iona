@@ -20,19 +20,20 @@
 	</div>
 	
 	<p:fieldset legend="#{msg.phones}" id="phoneList">
-		
-		<div class="field-4">
-			<p:outputLabel value="#{msg.label}" for="label" />
-			<p:inputText id="label" value="#{patientMB.newPhone.label}" />
-		</div>
-		
-		<div class="field-4">
-			<p:outputLabel value="#{msg.number}" for="number" />
-			<p:inputText id="number" value="#{patientMB.newPhone.number}" />
-		</div>
-		
-		<div class="field-4">
-			<p:commandButton actionListener="#{patientMB.addPhone()}" value="#{msg.add} #{msg.phone}" update="phoneList" icon="fa fa-plus" />
+		<div class="row">
+			<div class="field-3">
+				<p:outputLabel value="#{msg.label}" for="label" />
+				<p:inputText id="label" value="#{patientMB.newPhone.label}" />
+			</div>
+			
+			<div class="field-3">
+				<p:outputLabel value="#{msg.number}" for="number" />
+				<p:inputText id="number" value="#{patientMB.newPhone.number}" />
+			</div>
+			
+			<div class="field-3">
+				<p:commandButton value="#{msg.add} #{msg.phone}" id="addPhone" update="label number phones" actionListener="#{patientMB.addPhone}" styleClass="field-button" />
+			</div>
 		</div>
 		
 		<p:spacer height="10" />
@@ -55,9 +56,7 @@
 				<h:outputText value="#{phone.number}" />
 			</p:column>
 			<p:column headerText="#{msg.actions}" styleClass="actions">
-				<p:commandButton icon="fa fa-edit" action="#{patientMB.clean()}">
-				</p:commandButton>
-				<p:commandButton icon="fa fa-remove" actionListener="#{patientMB.clean()}" update="phones">
+				<p:commandButton icon="fa fa-remove" actionListener="#{patientMB.removePhone(phone)}" update="phones">
 					<p:confirm/>
 				</p:commandButton>
 			</p:column>
