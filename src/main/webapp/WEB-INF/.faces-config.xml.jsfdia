@@ -4,31 +4,35 @@
   <PROCESS-ITEM ID="rules:*:0" NAME="item" PATH="*" model-entity="JSFProcessItem">
    <PROCESS-ITEM-OUTPUT ID="home::#index.xhtml" NAME="output"
     PATH="/index.xhtml" TARGET="rules:#index.xhtml" TITLE="home" model-entity="JSFProcessItemOutput"/>
-   <PROCESS-ITEM-OUTPUT ID="patients::#patients#list.xhtml"
-    NAME="output1" PATH="/patients/list.xhtml"
-    TARGET="rules:#patients#list.xhtml" TITLE="patients" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="login::#login.xhtml" NAME="output1"
+    PATH="/login.xhtml" TARGET="rules:#login.xhtml" TITLE="login" model-entity="JSFProcessItemOutput"/>
   </PROCESS-ITEM>
  </PROCESS-ITEM>
  <PROCESS-ITEM NAME="rules:#index.xhtml" PATH="/index.xhtml"
   SHAPE="304,33,0,0" model-entity="JSFProcessGroup"/>
- <PROCESS-ITEM NAME="rules:#patients#*" PATH="/patients/*"
-  SHAPE="32,129,0,0" model-entity="JSFProcessGroup">
-  <PROCESS-ITEM ID="rules:#patients#*:0" NAME="item" PATH="/patients/*" model-entity="JSFProcessItem">
-   <PROCESS-ITEM-OUTPUT ID="list::#patients#list.xhtml" NAME="output"
-    PATH="/patients/list.xhtml" TARGET="rules:#patients#list.xhtml"
-    TITLE="list" model-entity="JSFProcessItemOutput"/>
-   <PROCESS-ITEM-OUTPUT ID="create::#patients#create.xhtml"
-    NAME="output1" PATH="/patients/create.xhtml"
-    TARGET="rules:#patients#create.xhtml" TITLE="create" model-entity="JSFProcessItemOutput"/>
-   <PROCESS-ITEM-OUTPUT ID="update::#patients#update.xhtml"
-    NAME="output2" PATH="/patients/update.xhtml"
-    TARGET="rules:#patients#update.xhtml" TITLE="update" model-entity="JSFProcessItemOutput"/>
+ <PROCESS-ITEM NAME="rules:#protected#user#patients#create.xhtml"
+  PATH="/protected/user/patients/create.xhtml" SHAPE="272,625,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#protected#user#patients#list.xhtml"
+  PATH="/protected/user/patients/list.xhtml" SHAPE="272,177,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#protected#user#patients#update.xhtml"
+  PATH="/protected/user/patients/update.xhtml" SHAPE="272,801,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#protected#user#patients#*"
+  PATH="/protected/user/patients/*" SHAPE="32,161,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#protected#user#patients#*:0" NAME="item"
+   PATH="/protected/user/patients/*" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="list::#protected#user#patients#list.xhtml"
+    NAME="output" PATH="/protected/user/patients/list.xhtml"
+    TARGET="rules:#protected#user#patients#list.xhtml" TITLE="list" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="create::#protected#user#patients#create.xhtml" NAME="output1"
+    PATH="/protected/user/patients/create.xhtml"
+    TARGET="rules:#protected#user#patients#create.xhtml" TITLE="create" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="update::#protected#user#patients#update.xhtml" NAME="output2"
+    PATH="/protected/user/patients/update.xhtml"
+    TARGET="rules:#protected#user#patients#update.xhtml" TITLE="update" model-entity="JSFProcessItemOutput"/>
   </PROCESS-ITEM>
  </PROCESS-ITEM>
- <PROCESS-ITEM NAME="rules:#patients#list.xhtml"
-  PATH="/patients/list.xhtml" SHAPE="272,145,0,0" model-entity="JSFProcessGroup"/>
- <PROCESS-ITEM NAME="rules:#patients#create.xhtml"
-  PATH="/patients/create.xhtml" SHAPE="272,321,0,0" model-entity="JSFProcessGroup"/>
- <PROCESS-ITEM NAME="rules:#patients#update.xhtml"
-  PATH="/patients/update.xhtml" SHAPE="272,433,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#login.xhtml" PATH="/login.xhtml"
+  SHAPE="256,353,0,0" model-entity="JSFProcessGroup"/>
 </PROCESS>

@@ -2,15 +2,6 @@
 <faces-config version="2.1" xmlns="http://java.sun.com/xml/ns/javaee"
 	xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_2_1.xsd">
-	
-	<application>
-		<message-bundle>jsf_messages</message-bundle>
-		<resource-bundle>
-			<base-name>messages</base-name>
-			<var>msg</var>
-		</resource-bundle>
-	</application>
-
 	<navigation-rule>
 		<from-view-id>*</from-view-id>
 		<navigation-case>
@@ -19,26 +10,37 @@
 			<redirect />
 		</navigation-case>
 		<navigation-case>
+			<from-outcome>login</from-outcome>
+			<to-view-id>/login.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
 			<from-outcome>patients</from-outcome>
-			<to-view-id>/patients/list.xhtml</to-view-id>
+			<to-view-id>/protected/user/patients/list.xhtml</to-view-id>
 			<redirect />
 		</navigation-case>
 	</navigation-rule>
-	
 	<navigation-rule>
-		<from-view-id>/patients/*</from-view-id>
+		<from-view-id>/protected/user/patients/*</from-view-id>
 		<navigation-case>
 			<from-outcome>list</from-outcome>
-			<to-view-id>/patients/list.xhtml</to-view-id>
+			<to-view-id>/protected/user/patients/list.xhtml</to-view-id>
 			<redirect />
 		</navigation-case>
 		<navigation-case>
 			<from-outcome>create</from-outcome>
-			<to-view-id>/patients/create.xhtml</to-view-id>
+			<to-view-id>/protected/user/patients/create.xhtml</to-view-id>
 		</navigation-case>
 		<navigation-case>
 			<from-outcome>update</from-outcome>
-			<to-view-id>/patients/update.xhtml</to-view-id>
+			<to-view-id>/protected/user/patients/update.xhtml</to-view-id>
 		</navigation-case>
 	</navigation-rule>
+	<application>
+		<message-bundle>jsf_messages</message-bundle>
+		<resource-bundle>
+			<base-name>messages</base-name>
+			<var>msg</var>
+		</resource-bundle>
+	</application>
 </faces-config>

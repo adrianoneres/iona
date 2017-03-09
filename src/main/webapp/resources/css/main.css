@@ -30,6 +30,11 @@ strong {
 	margin: 1rem 0;
 }
 
+.login-form {
+	width: 400px;
+	margin: 2rem auto;
+}
+
 /* grid */
 
 .row {

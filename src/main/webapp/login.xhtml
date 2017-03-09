@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"> 
+
+	<h:head>
+		<title>#{msg.projectName}</title>
+		<h:outputStylesheet library="css" name="main.css" />
+	</h:head>
+	<h:body>
+	<div class="login-form">
+	    <p:panel header="#{msg.login}">
+		    <form method="post" action="j_security_check">
+	        	<div class="field">
+	        		<p:outputLabel value="#{msg.username}" for="j_username" />
+					<p:inputText id="j_username" />
+				</div>
+				<div class="field">
+					<p:outputLabel value="#{msg.password}" for="j_password" />
+					<p:password id="j_password" />
+				</div>
+					
+				<h:commandButton value="#{msg.login}" />
+		    </form>
+	    </p:panel>
+    </div>
+</h:body>
+</html>
