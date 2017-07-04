@@ -1,10 +1,10 @@
-#Iona
+# Iona
 
 Iona is a software made for doctors, owners of small clinics, that want to register their patients appointments.
 
-##Configuration
+## Configuration
 
-###Database
+### Database
 
 Iona was built using MySQL 5.x. To properly use it,  add a datasource configuration to wildfly between the following tags:
 
@@ -13,7 +13,7 @@ Iona was built using MySQL 5.x. To properly use it,  add a datasource configurat
 </datasource>
 ```
 
-###Security
+### Security
 
 Iona needs a JAAS Configuration in Wildfly to enable access to protected pages. First, you need to add the following **security-domain** to your configuration file:
 
